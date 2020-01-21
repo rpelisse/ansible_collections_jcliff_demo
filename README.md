@@ -6,8 +6,11 @@ This project demonstrates how to use the [redhat.jcliff](https://github.com/rpel
 2. Install and start either a [JBoss EAP](https://www.redhat.com/en/technologies/jboss-middleware/application-platform) instance or a [Wildfly](https://wildfly.org/) instance on the target system
 3. Edit the file playbook.yml provided in this project to specify the path to the home of the server instance (JBOSS_HOME)
 4. Run the playbook:
+
     $ ansible-playbook playbook.yml
+
 5. If everything went fine, you should be able to see a new property being defined inside the server configuration:
+
     $ "${JBOSS_HOME}/bin/jboss-cli.sh" --connect --command="ls /system-property=jcliff.enabled"
     value=enabled
 
