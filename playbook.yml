@@ -1,18 +1,15 @@
 ---
 - hosts: localhost
-  gather_facts: true
+  gather_facts: false
   collections:
     - redhat.jcliff
   roles:
     - jcliff
-  pre_tasks:
-    - name: " ******* STAGE 0 *******"
-      debug:
-        msg: " >>> {{ ansible_distribution }} <<<"
 
   tasks:
     - jcliff:
         wfly_home: "{{ jboss_home }}"
+        rule_file: /dev/null
         subsystems:
           - system_props:
               - name: jcliff.enabled
