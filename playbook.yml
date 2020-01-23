@@ -9,7 +9,6 @@
   tasks:
     - jcliff:
         wfly_home: "{{ jboss_home }}"
-        rule_file: /dev/null
         subsystems:
           - system_props:
               - name: jcliff.enabled
