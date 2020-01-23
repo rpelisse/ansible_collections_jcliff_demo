@@ -5,8 +5,6 @@
     - redhat.jcliff
   roles:
     - jcliff
-  vars:
-    - jboss_home: {{ jboss_home }}
   pre_tasks:
     - name: " ******* STAGE 0 *******"
       debug:
