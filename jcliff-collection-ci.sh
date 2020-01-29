@@ -18,9 +18,8 @@ if [ ! -d "${JBOSS_HOME}" ]; then
   exit 1
 fi
 
-/wildfly/bin/standalone.sh 2>&1 > /dev/null
-
 echo -n 'Waiting for JBoss AS to boot up...'
+"${JBOSS_HOME}/bin/standalone.sh" 2>&1 & > /dev/null
 sleep 60
 echo 'Done.'
 
