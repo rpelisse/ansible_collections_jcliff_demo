@@ -24,4 +24,4 @@ echo 'Waiting for JBoss AS to boot up...'
 sleep 10
 echo 'JBoss AS should be up.'
 
-ansible-playbook "${PATH_TO_PLAYBOOK}" --extra-vars "jboss_home=${JBOSS_HOME} ansible_distribution=CentOS"
+ansible-playbook -vvvv "${PATH_TO_PLAYBOOK}" --extra-vars "jboss_home=${JBOSS_HOME} ansible_distribution=CentOS"
