@@ -9,7 +9,7 @@ cd "${COLLECTION_FOLDER}"
 rm -f *.tar.gz
 ansible-galaxy collection build --force
 ansible-galaxy collection install --force *.tar.gz
-cd -
+cd - 2> /dev/null
 
 export JBOSS_HOME=${JBOSS_HOME:-'/wildfly'}
 
