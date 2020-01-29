@@ -11,7 +11,7 @@ ansible-galaxy collection build --force
 ansible-galaxy collection install --force *.tar.gz
 cd -
 
-export JBOSS_HOME=${JBOSS_HOME:'/wildfly'}
+export JBOSS_HOME=${JBOSS_HOME:-'/wildfly'}
 
 if [ ! -d "${JBOSS_HOME}" ]; then
   echo "Invalid JBOSS_HOME: ${JBOSS_HOME}."
