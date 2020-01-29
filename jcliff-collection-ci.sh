@@ -2,6 +2,7 @@
 
 readonly COLLECTION_REPO_URL=${COLLECTION_REPO_URL:-'https://github.com/rpelisse/ansible_collections_jcliff'}
 readonly COLLECTION_FOLDER=${COLLECTION_FOLDER:-"/ansible-collection/"}
+readonly PATH_TO_PLAYBOOK=${PATH_TO_PLAYBOOK:-'/work/playbook.yml'}
 
 git clone "${COLLECTION_REPO_URL}" "${COLLECTION_FOLDER}"
 
@@ -18,9 +19,9 @@ if [ ! -d "${JBOSS_HOME}" ]; then
   exit 1
 fi
 
-echo -n 'Waiting for JBoss AS to boot up...'
 "${JBOSS_HOME}/bin/standalone.sh" 2>&1 > /dev/null &
-sleep 60
-echo 'Done.'
+echo 'Waiting for JBoss AS to boot up...'
+sleep 10
+echo 'JBoss AS should be up.'
 
-ansible-playbook playbook.yml --extra-vars "jboss_home=${JBOSS_HOME} ansible_distribution=CentOS"
+ansible-playbook "${PATH_TO_PLAYBOOK}" --extra-vars "jboss_home=${JBOSS_HOME} ansible_distribution=CentOS"
