@@ -19,7 +19,7 @@ if [ ! -d "${JBOSS_HOME}" ]; then
 fi
 
 echo -n 'Waiting for JBoss AS to boot up...'
-"${JBOSS_HOME}/bin/standalone.sh" 2>&1 & > /dev/null
+"${JBOSS_HOME}/bin/standalone.sh" 2>&1 > /dev/null &
 sleep 60
 echo 'Done.'
 
