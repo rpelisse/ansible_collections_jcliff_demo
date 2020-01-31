@@ -30,6 +30,6 @@ set -e
 for ansible_run in {1..2}
 do
   echo "Ansible run id: ${ansible_run}"
-  ansible-playbook "${ANSIBLE_VERBOSITY_LEVEL}" "${PATH_TO_PLAYBOOK}" --extra-vars "jboss_home=${JBOSS_HOME} ansible_distribution=CentOS"
+  ansible-playbook "${PATH_TO_PLAYBOOK}" ${ANSIBLE_VERBOSITY_LEVEL} --extra-vars "jboss_home=${JBOSS_HOME} ansible_distribution=CentOS"
 done
 echo 'Playbook has been run twice to ensure idempotency is respected.'
