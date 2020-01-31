@@ -32,3 +32,6 @@
                 connection_url: "jdbc:h2:mem:test2;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"
                 driver_name: h2
 
+    - name: "Restart Wildfly"
+      command: "{{ jboss_home }}/bin/jboss-cli.sh --connect --command=':reload'"
+      register: cli_result
