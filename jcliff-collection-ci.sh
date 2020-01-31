@@ -23,5 +23,6 @@ fi
 echo 'Waiting for JBoss AS to boot up...'
 sleep 10
 echo 'JBoss AS should be up.'
+tail -3 "${JBOSS_HOME}/standalone/log/server.log"
 
 ansible-playbook -vvvv "${PATH_TO_PLAYBOOK}" --extra-vars "jboss_home=${JBOSS_HOME} ansible_distribution=CentOS"
