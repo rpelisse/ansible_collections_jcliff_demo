@@ -14,7 +14,6 @@ ansible-galaxy collection install --force *.tar.gz
 cd - 2> /dev/null
 
 export JBOSS_HOME=${JBOSS_HOME:-'/wildfly'}
-
 if [ ! -d "${JBOSS_HOME}" ]; then
   echo "Invalid JBOSS_HOME: ${JBOSS_HOME}."
   exit 1
@@ -26,6 +25,7 @@ sleep 10
 echo 'JBoss AS should be up.'
 tail -3 "${JBOSS_HOME}/standalone/log/server.log"
 
+export ANSIBLE_NOCOLOR=${ANSIBLE_NOCOLOR:-'true'}
 set -e
 for ansible_run in {1..2}
 do
