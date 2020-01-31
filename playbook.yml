@@ -6,6 +6,8 @@
     app: /tmp/simple-webapp.war
   collections:
     - redhat.jcliff
+  roles:
+    - jcliff
   tasks:
 
     - name: "Download a demo app to deploy"
