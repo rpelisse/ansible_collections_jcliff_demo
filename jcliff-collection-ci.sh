@@ -3,6 +3,7 @@
 readonly COLLECTION_REPO_URL=${COLLECTION_REPO_URL:-'https://github.com/rpelisse/ansible_collections_jcliff'}
 readonly COLLECTION_FOLDER=${COLLECTION_FOLDER:-"/ansible-collection/"}
 readonly PATH_TO_PLAYBOOK=${PATH_TO_PLAYBOOK:-'/work/playbook.yml'}
+readonly ANSIBLE_VERBOSITY_LEVEL=${DEBUG:-''}
 
 git clone "${COLLECTION_REPO_URL}" "${COLLECTION_FOLDER}"
 
@@ -29,6 +30,6 @@ set -e
 for ansible_run in {1..2}
 do
   echo "Ansible run id: ${ansible_run}"
-  ansible-playbook -vvvv "${PATH_TO_PLAYBOOK}" --extra-vars "jboss_home=${JBOSS_HOME} ansible_distribution=CentOS"
+  ansible-playbook "${ANSIBLE_VERBOSITY_LEVEL}" "${PATH_TO_PLAYBOOK}" --extra-vars "jboss_home=${JBOSS_HOME} ansible_distribution=CentOS"
 done
 echo 'Playbook has been run twice to ensure idempotency is respected.'
