@@ -5,6 +5,7 @@
     app_url: http://people.redhat.com/~rpelisse/simple-webapp.war
     app: /tmp/simple-webapp.war
     ansible_distribution: RedHat
+    ansible_os_family: RedHat
     jboss_home: "{{ lookup('env','JBOSS_HOME') }}"
   collections:
     - redhat.jcliff
