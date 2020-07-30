@@ -6,6 +6,7 @@
     app: /tmp/simple-webapp.war
     ansible_distribution: RedHat
     ansible_os_family: RedHat
+    ansible_pkg_mgr: yum
     jboss_home: "{{ lookup('env','JBOSS_HOME') }}"
   collections:
     - redhat.jcliff
