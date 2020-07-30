@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  gather_facts: false
+  gather_facts: true
   vars:
     app_url: http://people.redhat.com/~rpelisse/simple-webapp.war
     app: /tmp/simple-webapp.war
